@@ -23,7 +23,7 @@ const config = readJson(path.join(ROOT, "site.config.json"));
 
 function readJson(f) { return JSON.parse(fs.readFileSync(f, "utf8")); }
 function write(f, s) { fs.mkdirSync(path.dirname(f), { recursive: true }); fs.writeFileSync(f, s); }
-function die(msg) { console.error("ERROR: " + scrub(String(msg))); process.exit(1); }
+function die(msg) { throw new Error(String(msg)); }
 function git(args) { return execFileSync("git", args, { cwd: ROOT, encoding: "utf8", stdio: ["ignore", "pipe", "pipe"] }).trim(); }
 
 let cachedKey;
@@ -290,7 +290,7 @@ async function check(slug) {
   const ok = report.form?.h > 0 && report.name?.w > 0 && report.email?.w > 0 && report.button?.w > 0 && !report.horizontalOverflow && report.keywordFits && !report.failedRequests.length && noindex;
   console.log(JSON.stringify({ page: e.page_url, setupNoindex: noindex, ...report, screenshot: shot }, null, 2));
   console.log(ok ? `LIVE and rendering. Kit form: ${report.kitState === "live" ? "CONNECTED" : "PENDING"}` : "CHECK FAILED");
-  if (!ok) process.exit(1);
+  if (!ok) process.exitCode = 1;
 }
 
 function card(slug, out) {
@@ -347,4 +347,8 @@ try {
   else if (cmd === "check") await check(args[0]);
   else if (cmd === "card") card(args[0], flag("--out"));
   else die("Commands: build | tag <slug> | wire <slug> | publish -m <msg> | check <slug> | card <slug> --out <file>");
-} catch (err) { die(err.message); }
+} catch (err) {
+  // exitCode, not process.exit(): exiting with fetch handles open crashes Node on Windows.
+  console.error("ERROR: " + scrub(err.message));
+  process.exitCode = 1;
+}
