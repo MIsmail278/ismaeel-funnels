@@ -1,0 +1,14 @@
+<!doctype html>
+<html><head><meta charset="utf-8"><link rel="stylesheet" href="{{ROOT}}assets/site.css">
+<style>
+html,body{width:1200px;height:630px;min-height:0;overflow:hidden}
+.og{width:1200px;height:630px;padding:64px 72px;display:flex;flex-direction:column;justify-content:space-between;background:var(--ink)}
+.og .who{font-size:26px;gap:18px}
+.og .who img{width:72px;height:72px;box-shadow:0 0 0 3px var(--rust)}
+.og .kw{font:italic 400 {{OG_SIZE}}px/.95 var(--serif);color:var(--rust);white-space:nowrap}
+.og .t{font:400 54px/1.08 var(--serif);color:var(--bone)}
+</style></head>
+<body><div class="og">
+  <div class="who"><img src="{{ROOT}}assets/logo.jpg" alt=""><span>{{HANDLE}}</span></div>
+  <div><div class="kw">{{OG_WORD}}</div><div class="t">{{OG_LINE}}</div></div>
+</div></body></html>

@@ -1,0 +1,86 @@
+{
+  "slug": "claude-code",
+  "keyword": "CLAUDE",
+  "tool": "Claude Code",
+  "date": "2026-11-08",
+  "video": null,
+  "hub": "Install it, sign in, give it a real job.",
+  "optin": {
+    "title": "Claude Code setup, free",
+    "headline": "Get Claude Code running today.",
+    "description": "Install steps for Windows and Mac, three first prompts, and five habits that keep it accurate.",
+    "bullets": [
+      "Install steps for Windows and Mac, with or without a terminal.",
+      "Three prompts to run on your first project.",
+      "Five habits that keep it accurate."
+    ],
+    "button": "Send me the setup",
+    "privacy": "You get the setup by email, then my notes on building with AI. Unsubscribe any time."
+  },
+  "setup": {
+    "title": "Claude Code setup",
+    "intro": "Claude Code reads your project, edits files and runs commands from plain English. Pick a route and follow the steps on your computer.",
+    "needs": [
+      "A paid Claude plan: Pro, Max, Ultra, Team or Enterprise. The terminal route also accepts a Claude Console account. [See current plans](https://claude.com/pricing).",
+      "A project folder to work in. Start with something small you know well."
+    ],
+    "sections": [
+      {
+        "heading": "Route A: desktop app",
+        "note": "No terminal. Best if you have never opened one.",
+        "steps": [
+          { "title": "Download the app", "body": "Open the [official download page](https://code.claude.com/docs/en/desktop-quickstart) and choose macOS or Windows." },
+          { "title": "Install and sign in", "body": "Run the installer, open Claude and sign in with your Anthropic account." },
+          { "title": "Open the Code tab", "body": "Click **Code** at the top of the sidebar. If you are asked to upgrade, you need a paid plan first." },
+          { "title": "Choose your folder", "body": "In the row under the prompt box, open the first control and pick the top entry under **Local**. Then click the folder control, choose **Open folder…** and select your project." },
+          { "title": "Give it a job", "body": "Type what you want in plain English, or use the three prompts below." },
+          { "title": "Review the changes", "body": "After an edit, click the `+12 -1` style indicator to see what changed. In **Manual** mode, Claude waits for your approval on each change." }
+        ]
+      },
+      {
+        "heading": "Route B: terminal",
+        "note": "Same tool, run from the command line.",
+        "steps": [
+          { "title": "Install it", "body": "Run the line for your system. It shows no progress while it downloads.", "code": [
+            { "label": "Windows PowerShell", "text": "irm https://claude.ai/install.ps1 | iex" },
+            { "label": "Mac, Linux, WSL", "text": "curl -fsSL https://claude.ai/install.sh | bash" }
+          ] },
+          { "title": "Check it worked", "body": "Open a new terminal window and run this. It should print a version number. If `claude` isn't found, [fix your PATH](https://code.claude.com/docs/en/troubleshoot-install).", "code": [ { "text": "claude --version" } ] },
+          { "title": "Start it in your project", "body": "Replace the path with your own folder.", "code": [ { "text": "cd path/to/your/project\nclaude" } ] },
+          { "title": "Sign in", "body": "On first run it asks you to log in. Finish in your browser. You only do this once." }
+        ]
+      },
+      {
+        "heading": "Your first three prompts",
+        "note": "Run them in order, on either route.",
+        "steps": [
+          { "title": "Have it read your project", "body": "Check that it understands what you built.", "code": [ { "text": "what does this project do?" } ] },
+          { "title": "Create its instructions file", "body": "This generates a starting CLAUDE.md from your code. Edit it down to what matters.", "code": [ { "text": "/init" } ] },
+          { "title": "Give it a small real task", "body": "Keep the first change easy to check.", "code": [ { "text": "Add tests for the main function" } ] }
+        ]
+      }
+    ],
+    "tips": [
+      { "title": "Be specific.", "body": "\"Fix the login bug where users see a blank screen after a wrong password\" beats \"fix the bug.\"" },
+      { "title": "Let it read before it writes.", "body": "On anything bigger than a small fix, ask it to analyze the code first." },
+      { "title": "Break big jobs into steps.", "body": "Give it a numbered list instead of one giant request." },
+      { "title": "Use /clear between tasks.", "body": "If you have corrected it twice and it's still wrong, `/clear` and write one better prompt." },
+      { "title": "Review every change.", "body": "You keep what you approve. Read the diff before you ship it." }
+    ],
+    "sources": [
+      { "label": "Claude Code quickstart", "url": "https://code.claude.com/docs/en/quickstart" },
+      { "label": "Desktop quickstart", "url": "https://code.claude.com/docs/en/desktop-quickstart" },
+      { "label": "Best practices", "url": "https://code.claude.com/docs/en/best-practices" }
+    ]
+  },
+  "card": {
+    "caption": "Comment CLAUDE and I'll DM you the full setup.",
+    "dm": "Here's the full Claude Code setup. Drop your email and I'll send it straight over: {{URL}}",
+    "followup": "Did you grab the Claude Code setup? It's here when you're ready: {{URL}}"
+  },
+  "email": {
+    "subject": "Your Claude Code setup",
+    "body": "Hey {{ subscriber.first_name }},\n\nTap the button below. It confirms your email and opens your Claude Code setup.\n\nInstall it on a computer, so save this email and open it there when you're ready.\n\nMuhammad",
+    "button": "Open my setup"
+  }
+}

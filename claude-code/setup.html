@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="robots" content="noindex">
+<title>Claude Code setup</title>
+<meta name="theme-color" content="#0E0D0C">
+<link rel="icon" type="image/svg+xml" href="../assets/favicon.svg">
+<link rel="stylesheet" href="../assets/site.css">
+</head>
+<body>
+<main class="page wide">
+  <header class="who"><img src="../assets/logo.jpg" width="36" height="36" alt="Muhammad Ismael"><a href="https://www.instagram.com/hey_ismaeel/">@hey_ismaeel</a></header>
+  <p class="echo">Your setup</p>
+  <h1 style="margin-top:8px">Claude Code setup</h1>
+  <p class="lede">Claude Code reads your project, edits files and runs commands from plain English. Pick a route and follow the steps on your computer.</p>
+  <div class="note"><h2>Before you start</h2>
+    <p>A paid Claude plan: Pro, Max, Ultra, Team or Enterprise. The terminal route also accepts a Claude Console account. <a href="https://claude.com/pricing">See current plans</a>.</p>
+    <p>A project folder to work in. Start with something small you know well.</p>
+  </div>
+  <section>
+    <h2>Route A: desktop app</h2>
+    <p>No terminal. Best if you have never opened one.</p>
+    <ol class="steps">
+      <li><h3>Download the app</h3><p>Open the <a href="https://code.claude.com/docs/en/desktop-quickstart">official download page</a> and choose macOS or Windows.</p></li>
+      <li><h3>Install and sign in</h3><p>Run the installer, open Claude and sign in with your Anthropic account.</p></li>
+      <li><h3>Open the Code tab</h3><p>Click <strong>Code</strong> at the top of the sidebar. If you are asked to upgrade, you need a paid plan first.</p></li>
+      <li><h3>Choose your folder</h3><p>In the row under the prompt box, open the first control and pick the top entry under <strong>Local</strong>. Then click the folder control, choose <strong>Open folder…</strong> and select your project.</p></li>
+      <li><h3>Give it a job</h3><p>Type what you want in plain English, or use the three prompts below.</p></li>
+      <li><h3>Review the changes</h3><p>After an edit, click the <code>+12 -1</code> style indicator to see what changed. In <strong>Manual</strong> mode, Claude waits for your approval on each change.</p></li>
+    </ol>
+  </section>
+  <section>
+    <h2>Route B: terminal</h2>
+    <p>Same tool, run from the command line.</p>
+    <ol class="steps">
+      <li><h3>Install it</h3><p>Run the line for your system. It shows no progress while it downloads.</p><div class="code"><small>Windows PowerShell</small><pre><code>irm https://claude.ai/install.ps1 | iex</code></pre></div><div class="code"><small>Mac, Linux, WSL</small><pre><code>curl -fsSL https://claude.ai/install.sh | bash</code></pre></div></li>
+      <li><h3>Check it worked</h3><p>Open a new terminal window and run this. It should print a version number. If <code>claude</code> isn't found, <a href="https://code.claude.com/docs/en/troubleshoot-install">fix your PATH</a>.</p><div class="code"><pre><code>claude --version</code></pre></div></li>
+      <li><h3>Start it in your project</h3><p>Replace the path with your own folder.</p><div class="code"><pre><code>cd path/to/your/project
+claude</code></pre></div></li>
+      <li><h3>Sign in</h3><p>On first run it asks you to log in. Finish in your browser. You only do this once.</p></li>
+    </ol>
+  </section>
+  <section>
+    <h2>Your first three prompts</h2>
+    <p>Run them in order, on either route.</p>
+    <ol class="steps">
+      <li><h3>Have it read your project</h3><p>Check that it understands what you built.</p><div class="code"><pre><code>what does this project do?</code></pre></div></li>
+      <li><h3>Create its instructions file</h3><p>This generates a starting CLAUDE.md from your code. Edit it down to what matters.</p><div class="code"><pre><code>/init</code></pre></div></li>
+      <li><h3>Give it a small real task</h3><p>Keep the first change easy to check.</p><div class="code"><pre><code>Add tests for the main function</code></pre></div></li>
+    </ol>
+  </section>
+  <section>
+    <h2>Five habits</h2>
+    <ul class="tips">
+      <li><strong>Be specific.</strong>&quot;Fix the login bug where users see a blank screen after a wrong password&quot; beats &quot;fix the bug.&quot;</li>
+      <li><strong>Let it read before it writes.</strong>On anything bigger than a small fix, ask it to analyze the code first.</li>
+      <li><strong>Break big jobs into steps.</strong>Give it a numbered list instead of one giant request.</li>
+      <li><strong>Use /clear between tasks.</strong>If you have corrected it twice and it's still wrong, <code>/clear</code> and write one better prompt.</li>
+      <li><strong>Review every change.</strong>You keep what you approve. Read the diff before you ship it.</li>
+    </ul>
+  </section>
+  <aside class="offer">
+    <h2>Go deeper with Claude.</h2>
+    <p>My Claude ebook and build services are one message away.</p>
+    <a class="btn" href="https://www.instagram.com/hey_ismaeel/">Message me on Instagram</a>
+  </aside>
+  <p class="sources">Source: <a href="https://code.claude.com/docs/en/quickstart">Claude Code quickstart</a>, <a href="https://code.claude.com/docs/en/desktop-quickstart">Desktop quickstart</a>, <a href="https://code.claude.com/docs/en/best-practices">Best practices</a></p>
+  <footer>@hey_ismaeel</footer>
+</main>
+<script src="../assets/site.js" defer></script>
+</body>
+</html>

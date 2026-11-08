@@ -1,0 +1,15 @@
+.tmp/
+node_modules/
+.env
+.env.*
+*.key
+*.mp4
+*.mov
+*.m4v
+*.mkv
+*.avi
+*.webm
+*.wav
+*.mp3
+raw/
+raw footage/

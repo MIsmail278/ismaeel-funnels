@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>{{TITLE}}</title>
+<meta name="description" content="{{DESCRIPTION}}">
+<link rel="canonical" href="{{PAGE_URL}}">
+<meta property="og:type" content="website">
+<meta property="og:title" content="{{TITLE}}">
+<meta property="og:description" content="{{DESCRIPTION}}">
+<meta property="og:url" content="{{PAGE_URL}}">
+<meta property="og:image" content="{{OG_IMAGE}}">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#0E0D0C">
+<link rel="icon" type="image/svg+xml" href="../assets/favicon.svg">
+<link rel="preload" href="../assets/fonts/instrument-serif-400-italic.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="../assets/fonts/geist-400-700.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="../assets/site.css">
+</head>
+<body>
+<main class="page">
+  <header class="who"><img src="../assets/logo.jpg" width="36" height="36" alt="{{BRAND}}"><a href="{{INSTAGRAM}}">{{HANDLE}}</a></header>
+  <p class="echo">You commented</p>
+  <p class="keyword" style="--len:{{KEYWORD_LEN}}">{{KEYWORD}}</p>
+  <h1>{{HEADLINE}}</h1>
+  <ul class="bullets">
+{{BULLETS}}
+  </ul>
+  <form id="signup" action="{{KIT_ACTION}}" method="post" data-state="{{KIT_STATE}}">
+    <input type="hidden" name="tags[]" value="{{KIT_TAG_ID}}">
+    <div class="fields">
+      <div class="field"><label for="n">Name</label><input id="n" name="fields[first_name]" type="text" placeholder="First name" autocomplete="given-name" autocapitalize="words" required></div>
+      <div class="field"><label for="e">Email</label><input id="e" name="email_address" type="email" placeholder="you@example.com" autocomplete="email" inputmode="email" autocapitalize="off" spellcheck="false" required></div>
+    </div>
+    <button class="btn" type="submit"{{KIT_DISABLED}}>{{BUTTON}}</button>
+    <p class="privacy">{{PRIVACY}}</p>
+  </form>
+  <div class="done" id="done" hidden>
+    <h2>Check your inbox.</h2>
+    <p>Tap the button in the email to open your setup. Not there in two minutes? Look in Promotions or Spam.</p>
+  </div>
+</main>
+<script src="../assets/site.js" defer></script>
+</body>
+</html>
