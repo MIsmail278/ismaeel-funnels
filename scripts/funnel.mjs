@@ -211,7 +211,6 @@ async function wire(slug) {
     const html = await fetch(f.embed_url).then((r) => r.text()).catch(() => "");
     const m = html.match(/<form[^>]+action="(https:[^"]+)"/i);
     if (m) action = m[1];
-    if (html && !/name="email_address"/.test(html)) console.warn("WARNING: Kit's form HTML has no email_address field. Check the form.");
   }
   updateEntry(slug, { kit_form_id: f.id, kit_form_uid: f.uid ?? null, kit_action: action });
   console.log(`Wired ${e.tag}: form ${f.id}`);
@@ -310,8 +309,7 @@ The page shows "Sign-up opens soon" until this is done. Kit's API cannot create 
 4. Click **Settings** > **Confirmation Email**. Tick **Send confirmation email**. Leave **Auto-confirm new subscribers** unticked.
 5. Under **After confirming redirect to**, choose the URL option and paste: ${e.setup_url}
 6. Click **Edit Email Contents**. Set the subject and body below, name the button, then **Save**.
-7. Left menu: **Automation** > **Rules** > **+ New rule**. Trigger: **Subscribes to a form**, pick \`${e.tag}\`. Action: **Add tag**, pick \`${e.tag}\`. Click **Save Rule**.
-8. Tell Claude "wire the ${slug} form". That runs \`node scripts/funnel.mjs wire ${slug}\`, then publishes and re-checks the page.
+7. Tell Claude "wire the ${slug} form". That runs \`node scripts/funnel.mjs wire ${slug}\`, then publishes and re-checks the page.
 
 Subject:
 

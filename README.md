@@ -10,7 +10,7 @@ Live hub: https://mismail278.github.io/ismaeel-funnels/
 2. The comment-to-DM tool sends the commenter a link to `/<slug>/`.
 3. The visitor enters a first name and email. That posts to a Kit form.
 4. Kit sends the confirmation email. Its button confirms the address and opens `/<slug>/setup.html`.
-5. A Kit rule tags the subscriber `lead-<slug>`, so the list can be sold to later by topic.
+5. The page sends the tag `lead-<slug>` with each signup, and Kit records which form they joined, so the list can be sold to later by topic.
 
 ## Layout
 
