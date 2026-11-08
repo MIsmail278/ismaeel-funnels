@@ -18,7 +18,7 @@ a{color:inherit;text-underline-offset:3px;text-decoration-color:var(--rust)}
 :focus-visible{outline:2px solid var(--rust);outline-offset:2px}
 
 /* who: the same photo and handle that sign every carousel */
-.who{display:flex;align-items:center;gap:10px;font:400 12px/1 var(--mono);letter-spacing:.04em}
+.who{display:flex;align-items:center;gap:10px;font:500 15px/1 var(--sans)}
 .who img{width:36px;height:36px;border-radius:50%;box-shadow:0 0 0 1.5px var(--rust);display:block}
 .who a{text-decoration:none}
 
@@ -73,7 +73,7 @@ code{font:400 .9em/1.4 var(--mono);background:var(--graphite);padding:.1em .35em
 .offer h2{font:400 30px/1.05 var(--serif)}
 .offer p{margin:6px 0 14px}
 .sources{margin-top:22px;font-size:13px;color:var(--ash)}
-footer{margin-top:30px;font:400 11px/1.6 var(--mono);letter-spacing:.04em;color:var(--ash)}
+footer{margin-top:30px;font:500 14px/1.6 var(--sans);color:var(--ash)}
 
 /* hub: the keywords are the menu */
 .hub-lede{margin-top:10px;color:var(--ash)}
