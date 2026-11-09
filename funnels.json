@@ -1,5 +1,33 @@
 [
   {
+    "slug": "ai-watchlist",
+    "keyword": "WATCH",
+    "tool": "AI watchlist",
+    "tag": "lead-ai-watchlist",
+    "tag_id": 25612221,
+    "kit_form_id": 10164281,
+    "kit_form_uid": "b6b4d7fee4",
+    "kit_action": "https://app.kit.com/forms/10164281/subscriptions",
+    "page_url": "https://mismail278.github.io/ismaeel-funnels/ai-watchlist/",
+    "setup_url": "https://mismail278.github.io/ismaeel-funnels/ai-watchlist/setup.html",
+    "date": "2026-11-09",
+    "video_file": "Carousal/exports/media I consume this week"
+  },
+  {
+    "slug": "rea",
+    "keyword": "REA",
+    "tool": "REA",
+    "tag": "lead-rea",
+    "tag_id": 25612182,
+    "kit_form_id": 10164277,
+    "kit_form_uid": "02068276c5",
+    "kit_action": "https://app.kit.com/forms/10164277/subscriptions",
+    "page_url": "https://mismail278.github.io/ismaeel-funnels/rea/",
+    "setup_url": "https://mismail278.github.io/ismaeel-funnels/rea/setup.html",
+    "date": "2026-11-09",
+    "video_file": "Carousal/exports/REA reverse engineer anything"
+  },
+  {
     "slug": "claude-code",
     "keyword": "CLAUDE",
     "tool": "Claude Code",

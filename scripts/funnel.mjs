@@ -128,9 +128,10 @@ function renderFunnel(c, e) {
     SETUP_TITLE: esc(c.setup.title), SETUP_INTRO: inline(c.setup.intro),
     SETUP_NEEDS: c.setup.needs.map((n) => `    <p>${inline(n)}</p>`).join("\n"),
     SETUP_SECTIONS: c.setup.sections.map((s) => `  <section>\n    <h2>${esc(s.heading)}</h2>${s.note ? `\n    <p>${inline(s.note)}</p>` : ""}\n    <ol class="steps">\n${steps(s.steps)}\n    </ol>\n  </section>`).join("\n"),
-    SETUP_TIPS: `  <section>\n    <h2>Five habits</h2>\n    <ul class="tips">\n${c.setup.tips.map((t) => `      <li><strong>${inline(t.title)}</strong>${inline(t.body)}</li>`).join("\n")}\n    </ul>\n  </section>`,
+    SETUP_EYEBROW: esc(c.setup.eyebrow || "Your setup"),
+    SETUP_TIPS: c.setup.tips.length ? `  <section>\n    <h2>${esc(c.setup.tipsHeading || "Five habits")}</h2>\n    <ul class="tips">\n${c.setup.tips.map((t) => `      <li><strong>${inline(t.title)}</strong>${inline(t.body)}</li>`).join("\n")}\n    </ul>\n  </section>` : "",
     OFFER_HEADING: esc(config.offer.heading), OFFER_BODY: esc(config.offer.body), OFFER_URL: esc(config.offer.url), OFFER_LABEL: esc(config.offer.label),
-    SETUP_SOURCES: "Source: " + c.setup.sources.map((s) => `<a href="${esc(s.url)}">${esc(s.label)}</a>`).join(", "),
+    SETUP_SOURCES: !c.setup.sources.length ? "" : "Source: " + c.setup.sources.map((s) => `<a href="${esc(s.url)}">${esc(s.label)}</a>`).join(", "),
   }));
 }
 

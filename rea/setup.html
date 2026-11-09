@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="robots" content="noindex">
+<title>REA setup</title>
+<meta name="theme-color" content="#0E0D0C">
+<link rel="icon" type="image/svg+xml" href="../assets/favicon.svg">
+<link rel="stylesheet" href="../assets/site.css">
+</head>
+<body>
+<main class="page wide">
+  <header class="who"><img src="../assets/logo.jpg" width="36" height="36" alt="Muhammad Ismael"><a href="https://www.instagram.com/hey_ismaeel/">@hey_ismaeel</a></header>
+  <p class="echo">Your setup</p>
+  <h1 style="margin-top:8px">REA setup</h1>
+  <p class="lede">REA connects your AI agent to tools that inspect native binaries, JavaScript and Electron apps, .NET assemblies and websites. Analysis runs locally. Follow the steps on your computer.</p>
+  <div class="note"><h2>Before you start</h2>
+    <p>The official repo: <a href="https://github.com/morluto/rea">github.com/morluto/rea</a>. A similar repo name does not make a download official.</p>
+    <p>Node.js with npm: 22.x (22.23.4 or later), 24.x (24.22.1 or later), or 26.12.1 and later. <a href="https://nodejs.org/en/download">Get Node.js</a>.</p>
+    <p>An agent REA supports, such as Claude Code, Codex or Cursor.</p>
+    <p>Only use REA on apps you own or are allowed to inspect.</p>
+  </div>
+  <section>
+    <h2>Route A: ask Claude Code</h2>
+    <p>No terminal. Claude Code runs the setup and you approve it.</p>
+    <ol class="steps">
+      <li><h3>Open Claude Code in a safe folder</h3><p>Use a folder you trust, outside the project you plan to inspect.</p></li>
+      <li><h3>Paste this prompt</h3><p>It asks for a read-only plan first.</p><div class="code"><pre><code>Run npx -y rea-agents@latest setup --client claude_code --dry-run and show me the plan. If I approve it, run the same command with --yes instead of --dry-run. The official source is github.com/morluto/rea.</code></pre></div></li>
+      <li><h3>Review and approve</h3><p>Read what it plans to change before you say yes. Setup backs up existing configuration.</p></li>
+      <li><h3>Restart Claude Code</h3><p>REA is available after the restart.</p></li>
+    </ol>
+  </section>
+  <section>
+    <h2>Route B: terminal</h2>
+    <p>Use this for Codex, Cursor or more than one agent.</p>
+    <ol class="steps">
+      <li><h3>Check Node.js</h3><p>It should print a version that meets the minimum above.</p><div class="code"><pre><code>node --version</code></pre></div></li>
+      <li><h3>Run setup</h3><p>Run it from a trusted folder outside the project you plan to inspect.</p><div class="code"><pre><code>npx rea-agents setup</code></pre></div></li>
+      <li><h3>Choose and approve</h3><p>Pick your agents, review the proposed changes and approve them. npm's download approval and REA's setup approval are separate.</p></li>
+      <li><h3>Restart your agents</h3><p>Restart each agent named in the completion message. Using Claude Desktop as an agent? Quit it fully before you approve.</p></li>
+    </ol>
+  </section>
+  <section>
+    <h2>Your first prompt</h2>
+    <p>Replace Notes with your app and the feature you want to understand.</p>
+    <ol class="steps">
+      <li><h3>Ask your agent</h3><p>It inspects the feature, shows the evidence, then builds a version for your project.</p><div class="code"><pre><code>Understand how search works in the Notes app, show me the evidence, and build a similar feature for my project.</code></pre></div></li>
+    </ol>
+  </section>
+  <section>
+    <h2>Three things to know</h2>
+    <ul class="tips">
+      <li><strong>Stick to official sources.</strong>Those are <a href="https://github.com/morluto/rea">morluto/rea</a>, <a href="https://rea.tools/">rea.tools</a> and the <code>rea-agents</code> npm package.</li>
+      <li><strong>Native apps need an engine.</strong>Static JavaScript analysis needs none. Native analysis can use Hopper, Ghidra, IDA or Kuna. Setup can install Hopper if you approve it.</li>
+      <li><strong>Stay within your rights.</strong>Only inspect apps you own or have permission to analyze.</li>
+    </ul>
+  </section>
+  <aside class="offer">
+    <h2>Go deeper with Claude.</h2>
+    <p>My Claude ebook and build services are one message away.</p>
+    <a class="btn" href="https://www.instagram.com/hey_ismaeel/">Message me on Instagram</a>
+  </aside>
+  <p class="sources">Source: <a href="https://github.com/morluto/rea">REA README</a>, <a href="https://github.com/morluto/rea/blob/main/docs/getting-started/installation.md">Installation guide</a>, <a href="https://rea.tools/">rea.tools</a></p>
+  <footer>@hey_ismaeel</footer>
+</main>
+<script src="../assets/site.js" defer></script>
+</body>
+</html>

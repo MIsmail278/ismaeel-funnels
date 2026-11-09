@@ -1,0 +1,80 @@
+{
+  "slug": "rea",
+  "keyword": "REA",
+  "tool": "REA",
+  "date": "2026-11-09",
+  "video": "Carousal/exports/REA reverse engineer anything",
+  "hub": "Let your AI agent inspect apps you're allowed to analyze.",
+  "optin": {
+    "title": "REA setup, free",
+    "headline": "Get REA running in your AI agent.",
+    "description": "The official repo, setup for Claude Code, Codex or Cursor, and your first prompt.",
+    "bullets": [
+      "The official repo, and how to avoid copies.",
+      "Setup for Claude Code, Codex or Cursor.",
+      "Your first prompt, ready to paste."
+    ],
+    "button": "Send me the setup",
+    "privacy": "You get the setup by email, then my notes on building with AI. Unsubscribe any time."
+  },
+  "setup": {
+    "title": "REA setup",
+    "intro": "REA connects your AI agent to tools that inspect native binaries, JavaScript and Electron apps, .NET assemblies and websites. Analysis runs locally. Follow the steps on your computer.",
+    "needs": [
+      "The official repo: [github.com/morluto/rea](https://github.com/morluto/rea). A similar repo name does not make a download official.",
+      "Node.js with npm: 22.x (22.23.4 or later), 24.x (24.22.1 or later), or 26.12.1 and later. [Get Node.js](https://nodejs.org/en/download).",
+      "An agent REA supports, such as Claude Code, Codex or Cursor.",
+      "Only use REA on apps you own or are allowed to inspect."
+    ],
+    "sections": [
+      {
+        "heading": "Route A: ask Claude Code",
+        "note": "No terminal. Claude Code runs the setup and you approve it.",
+        "steps": [
+          { "title": "Open Claude Code in a safe folder", "body": "Use a folder you trust, outside the project you plan to inspect." },
+          { "title": "Paste this prompt", "body": "It asks for a read-only plan first.", "code": [ { "text": "Run npx -y rea-agents@latest setup --client claude_code --dry-run and show me the plan. If I approve it, run the same command with --yes instead of --dry-run. The official source is github.com/morluto/rea." } ] },
+          { "title": "Review and approve", "body": "Read what it plans to change before you say yes. Setup backs up existing configuration." },
+          { "title": "Restart Claude Code", "body": "REA is available after the restart." }
+        ]
+      },
+      {
+        "heading": "Route B: terminal",
+        "note": "Use this for Codex, Cursor or more than one agent.",
+        "steps": [
+          { "title": "Check Node.js", "body": "It should print a version that meets the minimum above.", "code": [ { "text": "node --version" } ] },
+          { "title": "Run setup", "body": "Run it from a trusted folder outside the project you plan to inspect.", "code": [ { "text": "npx rea-agents setup" } ] },
+          { "title": "Choose and approve", "body": "Pick your agents, review the proposed changes and approve them. npm's download approval and REA's setup approval are separate." },
+          { "title": "Restart your agents", "body": "Restart each agent named in the completion message. Using Claude Desktop as an agent? Quit it fully before you approve." }
+        ]
+      },
+      {
+        "heading": "Your first prompt",
+        "note": "Replace Notes with your app and the feature you want to understand.",
+        "steps": [
+          { "title": "Ask your agent", "body": "It inspects the feature, shows the evidence, then builds a version for your project.", "code": [ { "text": "Understand how search works in the Notes app, show me the evidence, and build a similar feature for my project." } ] }
+        ]
+      }
+    ],
+    "tipsHeading": "Three things to know",
+    "tips": [
+      { "title": "Stick to official sources.", "body": "Those are [morluto/rea](https://github.com/morluto/rea), [rea.tools](https://rea.tools/) and the `rea-agents` npm package." },
+      { "title": "Native apps need an engine.", "body": "Static JavaScript analysis needs none. Native analysis can use Hopper, Ghidra, IDA or Kuna. Setup can install Hopper if you approve it." },
+      { "title": "Stay within your rights.", "body": "Only inspect apps you own or have permission to analyze." }
+    ],
+    "sources": [
+      { "label": "REA README", "url": "https://github.com/morluto/rea" },
+      { "label": "Installation guide", "url": "https://github.com/morluto/rea/blob/main/docs/getting-started/installation.md" },
+      { "label": "rea.tools", "url": "https://rea.tools/" }
+    ]
+  },
+  "card": {
+    "caption": "Comment REA and I'll send you the repo + setup steps.",
+    "dm": "Here's the REA repo and setup steps. Drop your email and I'll send them straight over: {{URL}}",
+    "followup": "Did you grab the REA setup? It's here when you're ready: {{URL}}"
+  },
+  "email": {
+    "subject": "Your REA setup",
+    "body": "Hey {{ subscriber.first_name }},\n\nTap the button below. It confirms your email and opens your REA setup.\n\nSet it up on a computer, so save this email and open it there when you're ready.\n\nMuhammad",
+    "button": "Open my setup"
+  }
+}

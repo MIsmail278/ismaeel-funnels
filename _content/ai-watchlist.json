@@ -1,0 +1,52 @@
+{
+  "slug": "ai-watchlist",
+  "keyword": "WATCH",
+  "tool": "AI watchlist",
+  "date": "2026-11-09",
+  "video": "Carousal/exports/media I consume this week",
+  "hub": "Four videos and one paper on how AI really works.",
+  "optin": {
+    "title": "AI watchlist, free",
+    "headline": "The 5 things I watched to understand AI.",
+    "description": "Direct links to four videos and one paper, with run times and what each one covers.",
+    "bullets": [
+      "Direct links to all 5.",
+      "Run times, so you can plan your week.",
+      "What each one actually covers."
+    ],
+    "button": "Send me the list",
+    "privacy": "You get the list by email, then my notes on building with AI. Unsubscribe any time."
+  },
+  "setup": {
+    "eyebrow": "Your list",
+    "title": "AI watchlist",
+    "intro": "Four videos and one 1950 paper. 7 hours 42 minutes of watching. Start here if you want to understand AI.",
+    "needs": [
+      "Three of the videos and the paper are free. iHuman is a film you may need to rent or stream."
+    ],
+    "sections": [
+      {
+        "heading": "The list",
+        "steps": [
+          { "title": "The Thinking Game", "body": "Film, 1h 24m. Five years inside DeepMind with Demis Hassabis. You see the setbacks, then the moment AlphaFold works. [Watch on YouTube](https://www.youtube.com/watch?v=d95J8yzvjbQ)" },
+          { "title": "iHuman", "body": "Film, 1h 39m. A 2019 film on AI, power and surveillance. It asks who gains control when AI is deployed. [See where to watch it](https://watch.plex.tv/movie/ihuman)" },
+          { "title": "The A.I. Dilemma", "body": "Talk, 1h 07m. Tristan Harris and Aza Raskin argue that social media was our first contact with AI. Recorded before GPT-4. [Watch on YouTube](https://www.youtube.com/watch?v=xoVJKj8lcNQ)" },
+          { "title": "Deep Dive into LLMs like ChatGPT", "body": "Lecture, 3h 31m. Andrej Karpathy walks through how these models are trained and why they hallucinate. No coding needed. [Watch on YouTube](https://www.youtube.com/watch?v=7xTGNNLPyMI)" },
+          { "title": "Computing Machinery and Intelligence", "body": "Paper, 1950. Alan Turing asks \"Can machines think?\", then swaps it for a test: the imitation game. [Read the PDF](https://courses.cs.umbc.edu/471/papers/turing.pdf)" }
+        ]
+      }
+    ],
+    "tips": [],
+    "sources": []
+  },
+  "card": {
+    "caption": "Comment WATCH and I'll send you all 5 links.",
+    "dm": "Here's the list of all 5. Drop your email and I'll send the links straight over: {{URL}}",
+    "followup": "Did you grab the AI watchlist? It's here when you're ready: {{URL}}"
+  },
+  "email": {
+    "subject": "Your AI watchlist",
+    "body": "Hey {{ subscriber.first_name }},\n\nTap the button below. It confirms your email and opens all 5 links.\n\nSave this email so you can come back to the list.\n\nMuhammad",
+    "button": "Open my list"
+  }
+}

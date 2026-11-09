@@ -24,7 +24,7 @@ a{color:inherit;text-underline-offset:3px;text-decoration-color:var(--rust)}
 
 /* the word they just commented, set to the full column width */
 .echo{margin-top:18px;font:400 12px/1 var(--mono);letter-spacing:.14em;text-transform:uppercase;color:var(--ash)}
-.keyword{--size:min(calc((100vw - var(--gutter)*2)/(var(--len)*.5)),calc(var(--col)/(var(--len)*.5)));font:italic 400 var(--size)/.92 var(--serif);color:var(--rust);white-space:nowrap;margin:6px 0 10px -.02em;letter-spacing:-.01em}
+.keyword{--size:min(calc((100vw - var(--gutter)*2)/(var(--len)*.5)),calc(var(--col)/(var(--len)*.5)),132px);font:italic 400 var(--size)/.92 var(--serif);color:var(--rust);white-space:nowrap;margin:6px 0 10px -.02em;letter-spacing:-.01em}
 h1{font:400 clamp(34px,9.6vw,44px)/1.04 var(--serif);letter-spacing:-.005em}
 .bullets{list-style:none;padding:0;margin:14px 0 20px}
 .bullets li{position:relative;padding-left:18px;margin-top:7px;font-size:15.5px;line-height:1.35}
