@@ -327,12 +327,17 @@ ${c.email.body}
 Button text: **${c.email.button}**
 
 `;
-  write(path.resolve(out), fill(template("funnel-card.md"), {
+  let text = fill(template("funnel-card.md"), {
     TOOL: c.tool, KEYWORD: c.keyword, PAGE_URL: e.page_url, SETUP_URL: e.setup_url,
     KIT_STATUS: e.kit_action ? `Connected (form ${e.kit_form_id}, tag \`${e.tag}\`)` : `**Not connected yet.** See "Finish in Kit first" below. Don't post until it's done.`,
     VIDEO: c.video || "None. Test funnel.",
     CAPTION: url(c.card.caption), DM: dm, DM_LEN: String(dm.length), FOLLOWUP: url(c.card.followup), KIT_SECTION: kitSteps,
-  }));
+  });
+  // A live automation replaces the manual checklist.
+  if (c.card.automation) {
+    text = text.slice(0, text.indexOf("## 2-minute DM tool checklist")) + `## DM tool\n\n${c.card.automation}\n\nTest it: comment \`${c.keyword}\` from a different account, because your own comments never trigger a DM. Tap the link in the DM and confirm the page opens.\n`;
+  }
+  write(path.resolve(out), text);
   console.log(`Wrote ${path.resolve(out)} (DM ${dm.length} characters)`);
 }
 

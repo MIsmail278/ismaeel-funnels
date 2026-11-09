@@ -41,8 +41,9 @@
   },
   "card": {
     "caption": "Comment WATCH and I'll send you all 5 links.",
-    "dm": "Here's the list of all 5. Drop your email and I'll send the links straight over: {{URL}}",
-    "followup": "Did you grab the AI watchlist? It's here when you're ready: {{URL}}"
+    "dm": "Here's the list of all 5. Drop your email and the links land in your inbox: {{URL}}",
+    "followup": "Did you grab the AI watchlist? It's here when you're ready: {{URL}}",
+    "automation": "Live in CreatorFlow on the \"Media I consumed this week\" post, with the button \"Get the list\"."
   },
   "email": {
     "subject": "Your AI watchlist",

@@ -69,8 +69,9 @@
   },
   "card": {
     "caption": "Comment REA and I'll send you the repo + setup steps.",
-    "dm": "Here's the REA repo and setup steps. Drop your email and I'll send them straight over: {{URL}}",
-    "followup": "Did you grab the REA setup? It's here when you're ready: {{URL}}"
+    "dm": "Here's the REA repo and setup steps. Drop your email and they land in your inbox: {{URL}}",
+    "followup": "Did you grab the REA setup? It's here when you're ready: {{URL}}",
+    "automation": "Live in CreatorFlow on the REA carousel post, with the button \"Get the setup\"."
   },
   "email": {
     "subject": "Your REA setup",
