@@ -80,7 +80,8 @@
   "card": {
     "caption": "Comment SETUP and I'll DM you every step.",
     "dm": "Here's every step for the OmniRoute setup. Drop your email and I'll send it straight over: {{URL}}",
-    "followup": "Did you grab the OmniRoute setup? It's here when you're ready: {{URL}}"
+    "followup": "Did you grab the OmniRoute setup? It's here when you're ready: {{URL}}",
+    "automation": "Live in CreatorFlow on your next post or reel, with the button \"Get the setup\". Post this reel next, because the automation attaches to whatever you post first."
   },
   "email": {
     "subject": "Your OmniRoute setup",
