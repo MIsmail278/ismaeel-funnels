@@ -14,6 +14,20 @@
     "video_file": "Carousal/exports/media I consume this week"
   },
   {
+    "slug": "omniroute",
+    "keyword": "SETUP",
+    "tool": "OmniRoute",
+    "tag": "lead-omniroute",
+    "tag_id": 25622298,
+    "kit_form_id": null,
+    "kit_form_uid": null,
+    "kit_action": null,
+    "page_url": "https://mismail278.github.io/ismaeel-funnels/omniroute/",
+    "setup_url": "https://mismail278.github.io/ismaeel-funnels/omniroute/setup.html",
+    "date": "2026-11-09",
+    "video_file": "exports/omniroute/OmniRoute_reel.mp4"
+  },
+  {
     "slug": "rea",
     "keyword": "REA",
     "tool": "REA",

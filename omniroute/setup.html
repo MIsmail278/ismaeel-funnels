@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="robots" content="noindex">
+<title>OmniRoute setup</title>
+<meta name="theme-color" content="#F3EEE3">
+<link rel="icon" type="image/svg+xml" href="../assets/favicon.svg">
+<link rel="stylesheet" href="../assets/site.css">
+</head>
+<body>
+<main class="page wide">
+  <header class="who"><img src="../assets/logo.jpg" width="36" height="36" alt="Muhammad Ismael"><a href="https://www.instagram.com/hey_ismaeel/">@hey_ismaeel</a></header>
+  <p class="echo">Your setup</p>
+  <h1 style="margin-top:8px">OmniRoute setup</h1>
+  <p class="lede">OmniRoute is an open source gateway that runs on your computer. It gives your coding tools one local endpoint and routes their requests to the AI providers you connect. Follow these four steps on your computer.</p>
+  <div class="note"><h2>Before you start</h2>
+    <p>Claude Code, already installed.</p>
+    <p>Node.js with npm, for the install command.</p>
+    <p>A free account with at least one provider. Some need an API key, approval or a payment method. <a href="https://github.com/cheaper-inference/OmniRoute/blob/HEAD/docs/getting-started/FREE-TIERS-GUIDE.md">Check the free tiers guide</a>.</p>
+  </div>
+  <section>
+    <h2>Step 1: Install OmniRoute</h2>
+    <p>Let Claude do it, or run the command yourself.</p>
+    <ol class="steps">
+      <li><h3>Copy the repo link</h3><p>Open the <a href="https://github.com/cheaper-inference/OmniRoute">OmniRoute repo</a> and copy the link from the address bar.</p></li>
+      <li><h3>Ask Claude Code to install it</h3><p>Open Claude Code in your folder, paste the link and send this. Read what it plans to run before you approve it.</p><div class="code"><pre><code>install this repo in my folder</code></pre></div></li>
+      <li><h3>Or install it yourself</h3><p>This is the install from OmniRoute's own quick start. On npm 11 or later, npm may block the install scripts OmniRoute needs. If you see that warning, use the <a href="https://github.com/cheaper-inference/OmniRoute#-quick-start">allow-scripts command in the quick start</a>.</p><div class="code"><pre><code>npm install -g omniroute</code></pre></div></li>
+      <li><h3>Start it</h3><p>Your dashboard opens at <code>http://localhost:20128</code>.</p><div class="code"><pre><code>omniroute</code></pre></div></li>
+    </ol>
+  </section>
+  <section>
+    <h2>Step 2: Connect a free provider</h2>
+    <p>OmniRoute needs at least one connection before it can route anything.</p>
+    <ol class="steps">
+      <li><h3>Open Providers</h3><p>In the dashboard, open <strong>Providers</strong>.</p></li>
+      <li><h3>Choose one that fits</h3><p>Pick a provider whose current terms, privacy policy and quota work for you. Providers marked <code>tos: avoid</code> are left out of automatic routing by default.</p></li>
+      <li><h3>Connect it with your own account</h3><p>Add its API key or complete its account flow.</p></li>
+    </ol>
+  </section>
+  <section>
+    <h2>Step 3: Point Claude Code at OmniRoute</h2>
+    <p>One command writes the config.</p>
+    <ol class="steps">
+      <li><h3>Run configure</h3><p>It shows the models available to you and writes Claude Code's config.</p><div class="code"><pre><code>omniroute configure claude</code></pre></div></li>
+      <li><h3>Pick auto</h3><p>Choose <code>auto</code> to route among your eligible connections, or pick one provider and model.</p></li>
+      <li><h3>Restart Claude Code</h3><p>Claude Code reads these settings once at startup, so close it and open it again.</p></li>
+    </ol>
+  </section>
+  <section>
+    <h2>Step 4: Check that it worked</h2>
+    <p>Your key is in the dashboard under Endpoints.</p>
+    <ol class="steps">
+      <li><h3>List your models</h3><p>Replace <code>YOUR_KEY</code> with your OmniRoute key. You should get a list of models back.</p><div class="code"><pre><code>curl http://localhost:20128/v1/models -H &quot;Authorization: Bearer YOUR_KEY&quot;</code></pre></div></li>
+      <li><h3>Launch it directly if you prefer</h3><p>This starts Claude Code against your local OmniRoute without writing a config.</p><div class="code"><pre><code>omniroute launch</code></pre></div></li>
+    </ol>
+  </section>
+  <section>
+    <h2>Five habits</h2>
+    <ul class="tips">
+      <li><strong>You are on a free model, not Claude.</strong>Answers, speed and limits depend on which provider handles the request.</li>
+      <li><strong>Keep client code out of it.</strong>Free tiers can log your requests or train on them. Read each provider's privacy policy before you send it anything private.</li>
+      <li><strong>The token number is an estimate.</strong>OmniRoute estimates about 1.6 billion free tokens a month across providers. You only get what the accounts you connect allow.</li>
+      <li><strong>Connect more than one provider.</strong>A fresh install can have no route available, and one free tier can run out. More connections give <code>auto</code> somewhere to go.</li>
+      <li><strong>Limits and terms still apply.</strong>OmniRoute does not change a provider's rules. Check them, because free tiers change.</li>
+    </ul>
+  </section>
+  <aside class="offer">
+    <h2>Go deeper with Claude.</h2>
+    <p>My Claude ebook and build services are one message away.</p>
+    <a class="btn" href="https://www.instagram.com/hey_ismaeel/">Message me on Instagram</a>
+  </aside>
+  <p class="sources">Source: <a href="https://github.com/cheaper-inference/OmniRoute#-quick-start">OmniRoute quick start</a>, <a href="https://github.com/cheaper-inference/OmniRoute/blob/HEAD/docs/guides/CLAUDE-CODE-CONFIGURATION.md">Claude Code configuration</a>, <a href="https://github.com/cheaper-inference/OmniRoute/blob/HEAD/docs/guides/CLI-INTEGRATIONS.md">CLI integrations</a>, <a href="https://github.com/cheaper-inference/OmniRoute/blob/HEAD/docs/getting-started/FREE-TIERS-GUIDE.md">Free tiers guide</a></p>
+  <footer>@hey_ismaeel</footer>
+</main>
+<script src="../assets/site.js" defer></script>
+</body>
+</html>

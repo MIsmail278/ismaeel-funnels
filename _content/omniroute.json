@@ -1,0 +1,90 @@
+{
+  "slug": "omniroute",
+  "keyword": "SETUP",
+  "tool": "OmniRoute",
+  "date": "2026-11-09",
+  "video": "exports/omniroute/OmniRoute_reel.mp4",
+  "hub": "Keep Claude Code running on free models after your limit runs out.",
+  "optin": {
+    "title": "OmniRoute setup, free",
+    "headline": "Keep Claude Code running after your limit runs out.",
+    "description": "Every step from the reel: install OmniRoute, connect a free provider and point Claude Code at it.",
+    "bullets": [
+      "Four steps from install to Claude Code running through OmniRoute.",
+      "The exact commands, plus how to check that it worked.",
+      "What free really means here, and what to keep out of it."
+    ],
+    "button": "Send me the setup",
+    "privacy": "You get the setup by email, then my notes on building with AI. Unsubscribe any time."
+  },
+  "setup": {
+    "title": "OmniRoute setup",
+    "intro": "OmniRoute is an open source gateway that runs on your computer. It gives your coding tools one local endpoint and routes their requests to the AI providers you connect. Follow these four steps on your computer.",
+    "needs": [
+      "Claude Code, already installed.",
+      "Node.js with npm, for the install command.",
+      "A free account with at least one provider. Some need an API key, approval or a payment method. [Check the free tiers guide](https://github.com/cheaper-inference/OmniRoute/blob/HEAD/docs/getting-started/FREE-TIERS-GUIDE.md)."
+    ],
+    "sections": [
+      {
+        "heading": "Step 1: Install OmniRoute",
+        "note": "Let Claude do it, or run the command yourself.",
+        "steps": [
+          { "title": "Copy the repo link", "body": "Open the [OmniRoute repo](https://github.com/cheaper-inference/OmniRoute) and copy the link from the address bar." },
+          { "title": "Ask Claude Code to install it", "body": "Open Claude Code in your folder, paste the link and send this. Read what it plans to run before you approve it.", "code": [ { "text": "install this repo in my folder" } ] },
+          { "title": "Or install it yourself", "body": "This is the install from OmniRoute's own quick start. On npm 11 or later, npm may block the install scripts OmniRoute needs. If you see that warning, use the [allow-scripts command in the quick start](https://github.com/cheaper-inference/OmniRoute#-quick-start).", "code": [ { "text": "npm install -g omniroute" } ] },
+          { "title": "Start it", "body": "Your dashboard opens at `http://localhost:20128`.", "code": [ { "text": "omniroute" } ] }
+        ]
+      },
+      {
+        "heading": "Step 2: Connect a free provider",
+        "note": "OmniRoute needs at least one connection before it can route anything.",
+        "steps": [
+          { "title": "Open Providers", "body": "In the dashboard, open **Providers**." },
+          { "title": "Choose one that fits", "body": "Pick a provider whose current terms, privacy policy and quota work for you. Providers marked `tos: avoid` are left out of automatic routing by default." },
+          { "title": "Connect it with your own account", "body": "Add its API key or complete its account flow." }
+        ]
+      },
+      {
+        "heading": "Step 3: Point Claude Code at OmniRoute",
+        "note": "One command writes the config.",
+        "steps": [
+          { "title": "Run configure", "body": "It shows the models available to you and writes Claude Code's config.", "code": [ { "text": "omniroute configure claude" } ] },
+          { "title": "Pick auto", "body": "Choose `auto` to route among your eligible connections, or pick one provider and model." },
+          { "title": "Restart Claude Code", "body": "Claude Code reads these settings once at startup, so close it and open it again." }
+        ]
+      },
+      {
+        "heading": "Step 4: Check that it worked",
+        "note": "Your key is in the dashboard under Endpoints.",
+        "steps": [
+          { "title": "List your models", "body": "Replace `YOUR_KEY` with your OmniRoute key. You should get a list of models back.", "code": [ { "text": "curl http://localhost:20128/v1/models -H \"Authorization: Bearer YOUR_KEY\"" } ] },
+          { "title": "Launch it directly if you prefer", "body": "This starts Claude Code against your local OmniRoute without writing a config.", "code": [ { "text": "omniroute launch" } ] }
+        ]
+      }
+    ],
+    "tips": [
+      { "title": "You are on a free model, not Claude.", "body": "Answers, speed and limits depend on which provider handles the request." },
+      { "title": "Keep client code out of it.", "body": "Free tiers can log your requests or train on them. Read each provider's privacy policy before you send it anything private." },
+      { "title": "The token number is an estimate.", "body": "OmniRoute estimates about 1.6 billion free tokens a month across providers. You only get what the accounts you connect allow." },
+      { "title": "Connect more than one provider.", "body": "A fresh install can have no route available, and one free tier can run out. More connections give `auto` somewhere to go." },
+      { "title": "Limits and terms still apply.", "body": "OmniRoute does not change a provider's rules. Check them, because free tiers change." }
+    ],
+    "sources": [
+      { "label": "OmniRoute quick start", "url": "https://github.com/cheaper-inference/OmniRoute#-quick-start" },
+      { "label": "Claude Code configuration", "url": "https://github.com/cheaper-inference/OmniRoute/blob/HEAD/docs/guides/CLAUDE-CODE-CONFIGURATION.md" },
+      { "label": "CLI integrations", "url": "https://github.com/cheaper-inference/OmniRoute/blob/HEAD/docs/guides/CLI-INTEGRATIONS.md" },
+      { "label": "Free tiers guide", "url": "https://github.com/cheaper-inference/OmniRoute/blob/HEAD/docs/getting-started/FREE-TIERS-GUIDE.md" }
+    ]
+  },
+  "card": {
+    "caption": "Comment SETUP and I'll DM you every step.",
+    "dm": "Here's every step for the OmniRoute setup. Drop your email and I'll send it straight over: {{URL}}",
+    "followup": "Did you grab the OmniRoute setup? It's here when you're ready: {{URL}}"
+  },
+  "email": {
+    "subject": "Your OmniRoute setup",
+    "body": "Hey {{ subscriber.first_name }},\n\nTap the button below. It confirms your email and opens your OmniRoute setup.\n\nYou'll do this on a computer, so save this email and open it there when you're ready.\n\nMuhammad",
+    "button": "Open my setup"
+  }
+}
