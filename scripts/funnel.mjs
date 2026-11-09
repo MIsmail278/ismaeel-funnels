@@ -156,7 +156,7 @@ async function renderOg(items) {
     fs.mkdirSync(TMP, { recursive: true });
     for (const i of todo) {
       const f = path.join(TMP, `og-${path.basename(i.out, ".jpg")}.html`);
-      const size = Math.min(230, Math.floor(1056 / (i.word.length * 0.61)));
+      const size = Math.min(300, Math.floor(1056 / (i.word.length * 0.54)));
       write(f, fill(template("og.html"), { ROOT: pathToFileURL(ROOT).href + "/", OG_SIZE: String(size), OG_WORD: esc(i.word), OG_LINE: esc(i.line), HANDLE: esc(config.handle) }));
       const p = await b.newPage();
       await p.setViewport({ width: 1200, height: 630, deviceScaleFactor: 1 });
